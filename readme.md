@@ -18,17 +18,18 @@ Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides
 - Do the script to get images of mobile
 
 ### Get started
-`npm install` To get all the packages<br/>
+`npm install` To get all the packages  
 Create an .env file at the root folder with the next params:
 ```
 PORT=PORT_EXPRESS
 MONGODB_LOCAL=MongoDB_URL
 API_KEY=API_KEY_ALPHACODERS
 ```
-<br/>Then run these scripts to get categories and images or import the collections that you will find on the folder testDB! <br/>
+  
+Then run these scripts to get categories and images or import the collections that you will find on the folder testDB!   
 `npm run addCategories` Gets all categories from AlphaCoders
 `npm run getImages -- --mobile=false` Gets all Desktop images from the Categories, not Sub Categories! "Working on mobile images mode at the moment"
-<br/>
+  
 `npm run start` To start the server on http://localhost:PORT_FROM_ENV
   
 ## Demo
