@@ -1,9 +1,11 @@
-####You can find me on [Linkedin!](https://www.linkedin.com/in/aitor-navarrete/)
+#### You can find me on [Linkedin!](https://www.linkedin.com/in/aitor-navarrete/)
+
 # Wall-Epapers
 
 Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides to the user wallpapers with a simple image viewer and infinite scrolling. The images are taken from the api of [AlphaCoders](https://wall.alphacoders.com/api.php)<br />
 :warning: There is no download button due to CORS Policy, but you can easily download the image with right click on desktop or hold finger and save image as in mobile!
-###Features
+
+### Features
 - Search Images by name
 - Infinte Scroll
 - Random Images
@@ -11,10 +13,10 @@ Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides
 - API with CRUD
 - Desktop and mobile wallpapers, with his responsive styles
 
-###TODO
+### TODO
 - Do the script to get images of mobile
 
-###Get started
+### Get started
 `npm install` To get all the packages<br/>
 Create an .env file at the root folder with the next params:
 ```
@@ -29,9 +31,9 @@ API_KEY=API_KEY_ALPHACODERS
 `npm run start` To start the server on http://localhost:PORT_FROM_ENV
 
 <br/><br/>
-##Demo
-####Desktop
+## Demo
+#### Desktop
 ![](https://s8.gifyu.com/images/wallepapers_edit_0.gif)
 <br/><br/>
-####Mobile
+#### Mobile
 ![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
