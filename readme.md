@@ -33,11 +33,9 @@ Then run these scripts to get categories and images or import the collections th
 `npm run start` To start the server on http://localhost:PORT_FROM_ENV
   
 ## Demo
-
-![](https://s8.gifyu.com/images/wallepapers_edit_0.gif)
   
-#### Mobile
-![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
+#### Desktop
+![](https://i.postimg.cc/kXkdDS74/wallepapers-edit-1.gif)
 
 #### Mobile
-![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
+![](https://i.postimg.cc/kXkdDS74/wallepapers-edit-1.gif)
