@@ -35,7 +35,7 @@ Then run these scripts to get categories and images or import the collections th
 ## Demo
   
 #### Desktop
-![](https://i.postimg.cc/kXkdDS74/wallepapers-edit-1.gif)
+![](https://i.postimg.cc/x1MVmddP/wallepapers-edit-0.gif)
 
 #### Mobile
 ![](https://i.postimg.cc/kXkdDS74/wallepapers-edit-1.gif)
