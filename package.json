@@ -1,0 +1,58 @@
+{
+  "name": "wall-epapers-demo",
+  "version": "1.0.0",
+  "description": "Wallpapers App with api",
+  "main": "server.js",
+  "scripts": {
+    "__comment": "to use npm script with yargs and pass arguments use this: npm run script -- --key='value'",
+    "start": "node -r dotenv/config src/server.js",
+    "nodemon": "nodemon -r dotenv/config src/server.js",
+    "webpackDev": "webpack --watch --mode development",
+    "dev": "run-p nodemon sass webpackDev",
+    "sass": "sass --watch --no-source-map src/scss:public/css/ --style compressed",
+    "addCategories": "node -r dotenv/config src/scripts/main.js addCategories",
+    "deleteCategories": "node -r dotenv/config src/scripts/main.js deleteCategories",
+    "getImages": "node -r dotenv/config src/scripts/main.js getImages",
+    "deleteAllImages": "node -r dotenv/config src/scripts/main.js deleteAllImages"
+  },
+  "author": "Slackjvo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "html-entities": "^1.3.1",
+    "mongoose": "^5.10.15",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-modal": "^3.12.1",
+    "waait": "^1.0.5",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/runtime": "^7.12.5",
+    "babel-loader": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.30.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Slackjvo/wall-epapers.git"
+  },
+  "keywords": [
+    "wallpapers"
+  ],
+  "bugs": {
+    "url": "https://gitlab.com/Slackjvo/wall-epapers/issues"
+  },
+  "homepage": "https://gitlab.com/Slackjvo/wall-epapers#readme"
+}

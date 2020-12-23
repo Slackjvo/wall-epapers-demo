@@ -1,0 +1,14 @@
+		<footer>
+		Copyright &copy; Wall-Epapers
+		</footer>
+		<% if(locals.file){ %> <script src="/js/<%= file %>.bundle.js"></script> <% } %>
+		<script>
+			const app = document.querySelector('.app')
+			if(app && app.dataset.device === "mobile"){
+				for(navLink of document.querySelectorAll('nav ul li a')){
+					navLink.href += (navLink.href.slice(navLink.href.length - 1) === '/' ? 'mobile': '/mobile')
+				}
+			}
+		</script>
+	</body>
+</html>
