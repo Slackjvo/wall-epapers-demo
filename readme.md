@@ -37,7 +37,7 @@ Then run these scripts to get categories and images or import the collections th
 ![](https://s8.gifyu.com/images/wallepapers_edit_0.gif)
   
 #### Mobile
-![](https://s8.gifyu.com/images/wallepapers_edit_0.gif)
+![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
 
 #### Mobile
 ![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
