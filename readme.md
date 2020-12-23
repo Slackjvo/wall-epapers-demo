@@ -27,7 +27,9 @@ API_KEY=API_KEY_ALPHACODERS
 ```
   
 Then run these scripts to get categories and images or import the collections that you will find on the folder testDB!   
+  
 `npm run addCategories` Gets all categories from AlphaCoders
+  
 `npm run getImages -- --mobile=false` Gets all Desktop images from the Categories, not Sub Categories! "Working on mobile images mode at the moment"
   
 `npm run start` To start the server on http://localhost:PORT_FROM_ENV
