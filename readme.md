@@ -2,7 +2,8 @@
 
 # Wall-Epapers
 
-Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides to the user wallpapers with a simple image viewer and infinite scrolling. The images are taken from the api of [AlphaCoders](https://wall.alphacoders.com/api.php)<br/>
+Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides to the user wallpapers with a simple image viewer and infinite scrolling. The images are taken from the api of [AlphaCoders](https://wall.alphacoders.com/api.php)  
+  
 :warning: There is no download button due to CORS Policy, but you can easily download the image with right click on desktop or hold finger and save image as in mobile!
 
 ### Features
