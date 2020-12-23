@@ -36,6 +36,6 @@ Then run these scripts to get categories and images or import the collections th
   
 #### Desktop
 ![](https://s8.gifyu.com/images/ice_video_20201223-195236.gif)
-
+  
 #### Mobile
 ![](https://i.postimg.cc/kXkdDS74/wallepapers-edit-0.gif)
