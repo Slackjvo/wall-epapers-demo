@@ -34,7 +34,7 @@ Then run these scripts to get categories and images or import the collections th
   
 ## Demo
 #### Desktop
-![](https://s8.gifyu.com/images/wallepapers_edit_0.gif)
+![](https://user-content.gitlab-static.net/bacb484711b4d52b5910683d3e7aed44cf13ab14/68747470733a2f2f73382e67696679752e636f6d2f696d616765732f77616c6c657061706572735f656469745f302e676966)
   
 #### Mobile
 ![](https://s8.gifyu.com/images/wallepapers_edit_1.gif)
