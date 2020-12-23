@@ -1,6 +1,6 @@
 #### You can find me on [Linkedin!](https://www.linkedin.com/in/aitor-navarrete/)
 
-# Wall-Epapersss
+# Wall-Epapers
 
 Wall-Epapers is an application made with REACT, EXPRESS and NodeJS that provides to the user wallpapers with a simple image viewer and infinite scrolling. The images are taken from the api of [AlphaCoders](https://wall.alphacoders.com/api.php)  
   
