@@ -21,9 +21,9 @@ async function getImagesAlphaCoders(mobile){
 				const resCount = await axios.get(`https://wall.alphacoders.com/api2.0/get.php?auth=${process.env.API_KEY}&method=category_count&id=${category.id.toString()}`,{ headers: { 'User-Agent': userAgent }})
 				const dataCount = resCount.data
 				if(dataCount.success){
-					//Each Requests gives 30 wallpapers so..
+					//Each Requests gives 30 wallpapers so.. but alphacoders only gives us the first 500 pages due to his own limitation...
 					const lastPage = Math.ceil(parseInt(dataCount.count)/30)
-					for(page=1;page<=lastPage;page++){
+					for(page=1;page<=(lastPage>=500?500:lastPage);page++){
 						const resImages = await axios.get(`https://wall.alphacoders.com/api2.0/get.php?auth=${process.env.API_KEY}&method=category&id=${category.id.toString()}&page=${page.toString()}&&info_level=3`,{ headers: { 'User-Agent': userAgent }})
 						const dataImages = resImages.data
 						if (dataImages.success){
