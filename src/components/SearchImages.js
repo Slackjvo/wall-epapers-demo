@@ -9,6 +9,7 @@ export default class SearchImages extends React.Component {
 
 	}
 
+	//Everytime we press a key, it'll wait 750ms and will checkout if the name in searchbox has changed, if so a call to our api will be made
 	handleKeyUp(e){
 		clearInterval(this.intervalSearch)
 		this.intervalSearch = setInterval(() => {

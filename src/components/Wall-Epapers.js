@@ -20,6 +20,7 @@ export default class WallEpapers extends React.Component{
 		}
 	}
 
+	//Function to call to our api to get the images by name
 	async getWallpapers(firstTime=true,mobile=false,nameSearched=''){
 		if(firstTime)	this.setState({page:-1,images:[],nameSearched:nameSearched,totalPages:0})
 		this.setState({page:this.state.page+1, loadingImagesGif: true})
@@ -39,6 +40,7 @@ export default class WallEpapers extends React.Component{
 		this.setState({loadingImagesGif: false})
 	}
 
+	//Function to call to our api to get random images
 	async getRandomWallpapers(mobile=false){
 		this.setState({loadingImagesGif: true})
 		try{

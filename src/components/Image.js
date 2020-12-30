@@ -5,6 +5,7 @@ export default class Image extends React.Component{
 		this.isImageIntoView = this.isImageIntoView.bind(this)
 	}
 
+	//If last (not the last one but one of them ) image is into view, a call to the api will be made 
 	isImageIntoView() {
 		if(!this.imgElement) return ''
 		const rect = this.imgElement.getBoundingClientRect()

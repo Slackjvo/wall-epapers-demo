@@ -1,19 +1,14 @@
 const mongoose = require('mongoose')
-const { boolean } = require('yargs')
-const Image = mongoose.model('Images', {
+const imageSchema = new mongoose.Schema({
 	id: {
 		type: Number,
 		required: true,
-		unique: true
 	},
-	idCategory: {
-		type: Number,
-		required: true
-	},
-	idSubCategory: {
-		type: Number,
-		default: 0
-	},
+	category: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Category'
+    },
 	name: {
 		type: String,
 		trim: true
@@ -21,6 +16,7 @@ const Image = mongoose.model('Images', {
 	url: {
 		type: String,
 		required: true,
+		unique: true,
 		trim: true
    },
    thumb: {
@@ -39,6 +35,8 @@ const Image = mongoose.model('Images', {
 		type: Boolean,
 		default: false
 	}
-},'images')
+},{timestamps: true})
+
+const Image = mongoose.model('Image', imageSchema,'images')
 
 module.exports = Image

@@ -7,7 +7,7 @@ const entities = new Entities()
 //DB
 const mongoose = require ('../../db/mongoose')
 //Models
-const Category = require('../../models/categories')
+const Category = require('../../models/category')
 
 /*async function getNumImagesMobile(url){
 	await wait(1000)

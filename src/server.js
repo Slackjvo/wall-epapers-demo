@@ -1,7 +1,7 @@
 const express = require('express')
 const {open} = require('../db/mongoose')
 const axios = require('axios')
-const Image = require('../models/images')
+const Image = require('../models/image')
 
 open()
 const port = process.env.PORT
