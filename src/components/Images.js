@@ -12,7 +12,7 @@ export default class Images extends React.Component{
 		this.checkKey = this.checkKey.bind(this)
 		this.state = {
 			showModal: false,
-			selectedImage: {num: 0, url: ''},
+			selectedImage: {num: 0, url: '', width:'0',height:'0'},
 			loadingImage: true
 		}
 	}
@@ -21,7 +21,7 @@ export default class Images extends React.Component{
 		let i = this.props.images.findIndex(image => {
 			if(image.url === url) return image
 		})
-		this.setState({ showModal: true, selectedImage:{num:i+1,url:url}})
+		this.setState({ showModal: true, selectedImage:{num:i+1,url:url,width:this.props.images[i].width,height:this.props.images[i].height}})
 		window.addEventListener('keydown', this.checkKey)
 	}
 	  
@@ -40,7 +40,7 @@ export default class Images extends React.Component{
 			if(image.url === this.state.selectedImage.url) return image
 		})
 		i = (i === 0 ? this.props.images.length-1 : i-1)
-		if(i >=0) this.setState({loadingImage:true, selectedImage:{num: i+1,url:this.props.images[i].url}})
+		if(i >=0) this.setState({loadingImage:true, selectedImage:{num: i+1,url:this.props.images[i].url,width:this.props.images[i].width,height:this.props.images[i].height}})
 	}
 
 	nextImage(){
@@ -48,7 +48,7 @@ export default class Images extends React.Component{
 			if(image.url === this.state.selectedImage.url) return image
 		})
 		i = (i+1 === this.props.images.length ? 0 : i+1)
-		if(i >=0) this.setState({loadingImage:true, selectedImage:{num: i+1,url:this.props.images[i].url}})
+		if(i >=0) this.setState({loadingImage:true, selectedImage:{num: i+1,url:this.props.images[i].url,width:this.props.images[i].width,height:this.props.images[i].height}})
 	}
 
 	render(){
@@ -64,6 +64,7 @@ export default class Images extends React.Component{
 					shouldCloseOnOverlayClick={true}
 				>
 					<span className="numImage">{`${this.state.selectedImage.num} of ${this.props.images.length}`}</span>
+					<span className="infoImage">{`${this.state.selectedImage.width}px \u00A0 x \u00A0 ${this.state.selectedImage.height}px`}</span>
 					<img onClick={this.prevImage} onKeyDown={this.checkKey} className={`back ${this.props.classDevice}`} src="/img/next.png" />
 					<img onLoad={() => {this.setState({loadingImage:false})}} className={`fullImage ${(this.state.loadingImage ? 'hide' : '')}`} src={this.state.selectedImage.url} />
 					<img onClick={this.nextImage} onKeyDown={this.checkKey} className={`next ${this.props.classDevice}`} src="/img/next.png" />

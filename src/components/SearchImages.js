@@ -1,11 +1,17 @@
 import React from 'react'
 
+//Components
+import WallEpapers from './Wall-Epapers'
+
 export default class SearchImages extends React.Component {
 	constructor(props){
 		super(props)
 		this.handleKeyUp = this.handleKeyUp.bind(this) 
 		this.intervalSearch = null
-		this.lastSearch = ''
+		this.state = {
+			nameSearched:'',
+			lastSearch: ''
+		}
 
 	}
 
@@ -14,21 +20,23 @@ export default class SearchImages extends React.Component {
 		clearInterval(this.intervalSearch)
 		this.intervalSearch = setInterval(() => {
 			const nameSearched = e.target.value
-			if(this.lastSearch !== nameSearched){
+			if(this.state.lastSearch !== nameSearched){
+				this.setState({nameSearched:nameSearched,lastSearch:nameSearched})
 				clearInterval(this.intervalSearch)
-				this.props.getWallpapers(true,(this.props.classDevice === 'desktop' ? false : true),nameSearched)
-				this.lastSearch = nameSearched
 			}
 		}, 750);
 	}
 
 	render(){
 		return(
-			<div className="searchImages">
-				<form>
-					<input onKeyUp={this.handleKeyUp} type="text" id="imageFilter" />
-				</form>
-			</div>
+			<React.Fragment>
+				<div className="searchImages">
+					<form>
+						<input onKeyUp={this.handleKeyUp} type="text" id="imageFilter" />
+					</form>
+				</div>
+				<WallEpapers mode={"normal"} classDevice={this.props.classDevice} nameSearched={this.state.nameSearched} />
+			</React.Fragment>
 		)
 	}
 }

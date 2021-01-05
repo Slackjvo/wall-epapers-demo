@@ -3,7 +3,6 @@ import axios from 'axios'
 
 //Components
 import Images from './Images'
-import SearchImages from './SearchImages'
 
 export default class WallEpapers extends React.Component{
 	constructor(props){
@@ -15,22 +14,23 @@ export default class WallEpapers extends React.Component{
 			totalPages: 0,
 			results: -1,
 			page: -1,
-			nameSearched: '',
 			loadingImagesGif: false
 		}
 	}
 
 	//Function to call to our api to get the images by name
-	async getWallpapers(firstTime=true,mobile=false,nameSearched=''){
-		if(firstTime)	this.setState({page:-1,images:[],nameSearched:nameSearched,totalPages:0})
-		this.setState({page:this.state.page+1, loadingImagesGif: true})
+	async getWallpapers(firstTime=true,mobile=false){
+		if(firstTime)	await this.setState({page:-1,images:[],totalPages:0})
+		await this.setState({page:this.state.page+1, loadingImagesGif: true})
 		try{
-			if(this.state.nameSearched !== '' || !firstime && this.state.page <= this.state.totalPages){
-				const res = await axios.post(`/api/images/filter`, {name:this.state.nameSearched,page:this.state.page,mobile:mobile})
+			if(this.props.nameSearched !== '' || !firstTime && this.state.page <= this.state.totalPages){
+				const res = await axios.post(`/api/images/filter`, {name:this.props.nameSearched,page:this.state.page,mobile:mobile})
 				const {results,images} = {...await res.data}
-				if(firstTime) this.setState({totalPages:Math.ceil(results/36)-1, results:results})
+				console.log(results)
+				console.log(firstTime)
+				if(firstTime) await this.setState({totalPages:Math.ceil(results/36)-1, results:results})
 				if(images.length>0) {
-					const imagesArray = images.map(image => ({id:image.id,url:image.url,thumbUrl:image.thumb}))
+					const imagesArray = images.map(image => ({id:image.id,url:image.url,thumbUrl:image.thumb,width:image.width.toString(),height:image.height.toString()}))
 					this.setState({images: [...this.state.images, ...imagesArray]})
 				}
 			}
@@ -47,7 +47,7 @@ export default class WallEpapers extends React.Component{
 			const res = await axios.post(`/api/images/random`, {mobile:mobile})
 			const images = await res.data
 			if(images.length>0) {
-				const imagesArray = images.map(image => ({id:image.id,url:image.url,thumbUrl:image.thumb}))
+				const imagesArray = images.map(image => ({id:image.id,url:image.url,thumbUrl:image.thumb,width:image.width.toString(),height:image.height.toString()}))
 				this.setState({images: [...this.state.images, ...imagesArray]})
 			}
 		}catch(err){
@@ -57,20 +57,21 @@ export default class WallEpapers extends React.Component{
 	}
 
 	componentDidMount() {
-		if(this.props.mode === 'random'){
-			this.getRandomWallpapers((this.props.classDevice === 'desktop' ? false : true))
+		if(this.props.mode === 'random')	this.getRandomWallpapers((this.props.classDevice === 'desktop' ? false : true))
+	}
+
+	componentDidUpdate(prevProps) {
+		if((prevProps.mode !== 'random' && prevProps.mode == this.props.mode) && prevProps.nameSearched !== this.props.nameSearched){
+			this.getWallpapers(true,(this.props.classDevice === 'desktop' ? false : true))
 		}
 	}
 
 	render() {
 		return(
-			<React.Fragment>
-				{this.props.mode === 'normal' &&
-					<SearchImages getWallpapers={this.getWallpapers} classDevice={this.props.classDevice} />
-				}
+			<div>
 				<Images mode={this.props.mode} images={this.state.images} getWallpapers={this.getWallpapers} results={this.state.results} classDevice={this.props.classDevice} />
 				<img className={`loading ${(this.state.loadingImagesGif ? '' : 'hide')}`} src="/img/loading.gif" />
-			</React.Fragment>
+			</div>
 		)
 	}
 }

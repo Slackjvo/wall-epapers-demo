@@ -118,16 +118,23 @@ h1{
 		background: url('/img/loadingImage.gif') center no-repeat;
 		background-size: 128px 128px;
 		outline: 0;
-
+		
 		.numImage{
+			text-align: right;
+			font-weight: bold;
+		}
+		
+		.infoImage{
+			text-align: left;
+		}
+		
+		.numImage, .infoImage{
 			width: 100%;
 			margin: 0px auto;
 			position: absolute;
 			top: -40px;
-			text-align: center;
 			color: white;
 			font-size: 22px;
-			font-weight: bold;
 		}
 		
 		&.desktop{
@@ -244,7 +251,7 @@ h1{
 		.image{
 			&.mobile{
 				max-width: 280px;
-				height: 450px;
+				height: auto;
 			}
 			&.desktop{
 				width: 280px;
@@ -255,7 +262,7 @@ h1{
 
 	.backgroundImage{
 		.galleryViewer{
-			.numImage{
+			.numImage, .infoImage{
 				top: -35px;
 			}
 
@@ -297,5 +304,16 @@ h1{
 		}
 
 	}
+}
 
+@media(max-width: 350px) {
+
+	.backgroundImage{
+		.galleryViewer{
+			.numImage, .infoImage{
+				top: -30px;
+				font-size: 20px;				
+			}
+		}
+	}
 }
